@@ -6,7 +6,7 @@ class LoginModel with ChangeNotifier {
 
   int get count => _count;
   void increment() {
-    _count++;
+    _count++; // add count
     notifyListeners(); // Notifies all listeners of the change
   }
 }
