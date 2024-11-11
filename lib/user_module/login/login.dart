@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:user_module/common_widgets/custom_sizedbox.dart';
 import 'package:user_module/constant/images.dart';
 
 import '../../common_widgets/custom_button.dart';
 import '../../common_widgets/custom_input_fields.dart';
 import '../../constant/common_text.dart';
+import '../../common_widgets/custom_sizedbox.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -37,7 +39,7 @@ class _LoginViewState extends State<LoginView> {
                 keyboardType: TextInputType.emailAddress,
                 isPassword: false,
               ),
-              SizedBox(height: 16.h),
+              vSizedBox16,
               // Password TextField
               CustomTextField(
                 labelText: CustomText.password,
@@ -45,7 +47,7 @@ class _LoginViewState extends State<LoginView> {
                 keyboardType: TextInputType.visiblePassword,
                 isPassword: true, // Set this to true to show visibility toggle
               ),
-              SizedBox(height: 16.h),
+              vSizedBox16,
               CustomButton(
                 label: CustomText.login,
                 onPressed: () {
