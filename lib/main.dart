@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,9 +18,10 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        textTheme: GoogleFonts.poppinsTextTheme()
 
       ),
-      home: const MyHomePage(title: 'Flutter Demo'),
+      home:  MyHomePage(title: 'Flutter Demo'),
     );
   }
 }
@@ -85,8 +87,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+             Text(
               'You have pushed the button this many times:',
+               style: GoogleFonts.aBeeZee(fontStyle: FontStyle.italic,fontWeight: FontWeight.bold),
             ),
             Text(
               '$_counter',
@@ -98,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child:  Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
