@@ -55,7 +55,7 @@ class _LoginViewState extends State<LoginView> {
                 textColor: Colors.white,
                 borderRadius: 12.r,
                 padding: EdgeInsets.symmetric(horizontal: 20.r, vertical: 10.r),
-                fontSize: 18.sp,
+                fontSize: 12.sp,
               )
             ],
           ),
