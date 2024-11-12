@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:user_module/common_widgets/custom_sizedbox.dart';
+import 'package:user_module/constant/custom_sizedbox.dart';
 import 'package:user_module/constant/images.dart';
 
 import '../../common_widgets/custom_button.dart';
 import '../../common_widgets/custom_input_fields.dart';
 import '../../constant/common_text.dart';
-import '../../common_widgets/custom_sizedbox.dart';
+import '../../constant/custom_sizedbox.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
