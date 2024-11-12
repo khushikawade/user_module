@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:user_module/common_widgets/custom_button.dart';
 import 'package:user_module/common_widgets/custom_input_fields.dart';
-import 'package:user_module/common_widgets/custom_sizedbox.dart';
 import 'package:user_module/common_widgets/navigation.dart';
 import 'package:user_module/common_widgets/text.dart';
 import 'package:user_module/constant/colors.dart';
 import 'package:user_module/constant/images.dart';
+
+import '../../constant/custom_sizedbox.dart';
 
 class SignupView extends StatefulWidget {
   const SignupView({super.key});
