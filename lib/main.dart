@@ -9,6 +9,8 @@ import 'package:user_module/user_module/login/login_model.dart';
 import 'package:user_module/user_module/signUp/signup_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'user_module/splash/splash.dart';
+
 void main() {
   runApp(
     MultiProvider(

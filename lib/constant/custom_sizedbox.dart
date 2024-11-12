@@ -10,3 +10,5 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
  SizedBox vSizedBox8 = SizedBox(height: 8.h,);
  SizedBox vSizedBox16 = SizedBox(height:16.h,);
  SizedBox vSizedBox32 = SizedBox(height: 32.h,);
+
+ SizedBox vSizedBox50 = SizedBox(height: 50.h,);

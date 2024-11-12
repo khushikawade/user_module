@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:user_module/common_widgets/custom_sizedbox.dart';
+import 'package:provider/provider.dart';
+
 import 'package:user_module/common_widgets/navigation.dart';
 import 'package:user_module/common_widgets/text.dart';
 import 'package:user_module/constant/colors.dart';
+import 'package:user_module/constant/custom_sizedbox.dart';
 import 'package:user_module/constant/images.dart';
+import 'package:user_module/user_module/login/login_model.dart';
 import 'package:user_module/user_module/signUp/signup.dart';
 
 import '../../common_widgets/custom_button.dart';
 import '../../common_widgets/custom_input_fields.dart';
 import '../../constant/common_text.dart';
-import '../../common_widgets/custom_sizedbox.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -20,8 +22,11 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
+   LoginModel loginviewModel = Provider.of<LoginModel>(context, listen: true);//change refresh
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(32.h),
@@ -33,12 +38,19 @@ class _LoginViewState extends State<LoginView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Image.asset(CustomImages.logoImage),
+                  Image.asset(
+                    CustomImages.instraLogo,
+                    width: 100.w, // Adjust width as needed
+                    height: 50.h,
+                  ),
+                  vSizedBox50,
                   CustomTextField(
                     labelText: CustomText.email,
                     prefixIcon: Icons.email,
                     keyboardType: TextInputType.emailAddress,
                     isPassword: false,
+                     controller: loginviewModel.emailController,
+                    errorText: loginviewModel.emailError
                   ),
                   vSizedBox16,
                   // Password TextField
@@ -46,43 +58,53 @@ class _LoginViewState extends State<LoginView> {
                     labelText: CustomText.password,
                     prefixIcon: Icons.lock,
                     keyboardType: TextInputType.visiblePassword,
-                    isPassword: true, // Set this to true to show visibility toggle
+                    isPassword:
+                        true, 
+                            controller: loginviewModel.passwordController,
+                    errorText: loginviewModel.passwordError, // Set this to true to show visibility toggle
                   ),
                   vSizedBox16,
                   CustomButton(
                     label: CustomText.login,
                     onPressed: () {
+                       loginviewModel.onLoginButtonClick();
                       print("Button Pressed!");
-                      push(context: context, screen: SignupView());
-
+                      // push(context: context, screen: SignupView());
                     },
                   ),
                   vSizedBox8,
-                  ParagraphText(text: "Forgotten Password ?",color: Colors.black,)
+                  ParagraphText(
+                    text: "Forgotten Password ?",
+                    color: Colors.black,
+                  )
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 20.0), // Padding for spacing from the bottom
+              padding: EdgeInsets.only(
+                  bottom: 20.0), // Padding for spacing from the bottom
               child: Column(
                 children: [
                   CustomButton(
                     label: "Create a new account",
                     onPressed: () {
+                      // loginviewModel.onLoginButtonClick();
                       print("Bottom Button Pressed!");
                     },
                     backgroundColor: CustomColor.primaryColor.withAlpha(40),
                     borderColor: CustomColor.primaryColor,
                     textColor: CustomColor.primaryColor,
                   ),
-                  Image.asset(CustomImages.metaImg,height: 30.h,)
+                  Image.asset(
+                    CustomImages.metaImg,
+                    height: 30.h,
+                  )
                 ],
               ),
             ),
           ],
         ),
       ),
-
     );
   }
 }
