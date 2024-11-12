@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextField extends StatefulWidget {
   final String labelText;
@@ -26,6 +27,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return TextFormField(
       decoration: InputDecoration(
         labelText: widget.labelText,
+        labelStyle: TextStyle(fontSize: 8.sp,),
         prefixIcon: Icon(widget.prefixIcon),
         suffixIcon: widget.isPassword
             ? IconButton(
